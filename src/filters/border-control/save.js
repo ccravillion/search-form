@@ -3,8 +3,9 @@ import { addFilter } from "@wordpress/hooks";
 function addBorderDiv(element, blockType, attributes) {
   let divStyles = {
     borderStyle: attributes.bcBorderStyle || "none",
-    borderWidth: "2px",
-    borderColor: "black",
+    borderWidth: attributes.bcBorderWidth || "2px",
+  	borderRadius: attributes.bcBorderRadius || "2px",
+    borderColor: attributes.bcBorderColor || "black",
   };
 
   // WARNING!!!
@@ -22,6 +23,6 @@ function addBorderDiv(element, blockType, attributes) {
 
 addFilter(
   "blocks.getSaveElement",
-  "your-plugin-name/border-control/add-border-element",
+  "cc/border-control/add-border-element",
   addBorderDiv,
 );

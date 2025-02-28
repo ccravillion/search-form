@@ -30,6 +30,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 // create a wrapper function which will receive the block we are trying to wrap
 
 function blockWrapper(WrappedBlock) {
@@ -42,9 +44,10 @@ function blockWrapper(WrappedBlock) {
       } = this.props;
       let divStyles = {
         borderStyle: attributes.bcBorderStyle || "none",
-        borderWidth: "2px",
-        borderColor: "black",
-        padding: "10px"
+        borderWidth: (attributes.bcBorderWidth || 2) + 'px',
+        borderRadius: (attributes.bcBorderRadius || 0) + 'px',
+        borderColor: attributes.bcBorderColor || "black",
+        padding: (attributes.bcPadding || 0) + 'px'
       };
 
       // don't apply styles if there is no border
@@ -53,29 +56,67 @@ function blockWrapper(WrappedBlock) {
       }
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
             title: "Border Controls",
             initialOpen: false,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-              label: "Style",
-              value: attributes.bcBorderStyle,
-              onChange: bcBorderStyle => setAttributes({
-                bcBorderStyle
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+                label: "Style",
+                value: attributes.bcBorderStyle,
+                onChange: bcBorderStyle => setAttributes({
+                  bcBorderStyle
+                }),
+                options: [{
+                  label: "None",
+                  value: "none"
+                }, {
+                  label: "Solid",
+                  value: "solid"
+                }, {
+                  label: "Dashed",
+                  value: "dashed"
+                }, {
+                  label: "Dotted",
+                  value: "dotted"
+                }]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+                children: ["Padding", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+                  type: "number",
+                  value: attributes.bcPadding,
+                  onChange: e => setAttributes({
+                    bcPadding: parseInt(e.target.value)
+                  })
+                }), " px"]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+              label: "Border Width",
+              value: attributes.bcBorderWidth,
+              onChange: bcBorderWidth => setAttributes({
+                bcBorderWidth
               }),
-              options: [{
-                label: "None",
-                value: "none"
-              }, {
-                label: "Solid",
-                value: "solid"
-              }, {
-                label: "Dashed",
-                value: "dashed"
-              }, {
-                label: "Dotted",
-                value: "dotted"
-              }]
-            })
+              min: 0.5,
+              max: 5,
+              step: 0.5
+            }), " px", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+              label: "Border Radius",
+              value: attributes.bcBorderRadius,
+              onChange: bcBorderRadius => setAttributes({
+                bcBorderRadius
+              }),
+              min: 0,
+              max: 10,
+              step: 1
+            }), " px", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
+                label: "Border Color",
+                value: attributes.bcBorderColor,
+                onChange: bcBorderColor => setAttributes({
+                  bcBorderColor
+                })
+              })
+            })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "wp-block",
@@ -95,7 +136,7 @@ function blockWrapper(WrappedBlock) {
 const borderComponent = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_0__.createHigherOrderComponent)(blockWrapper, "border-control");
 
 // register our filter with WordPress
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__.addFilter)("editor.BlockEdit", "your-plugin-name/border-control/block-wrapper", borderComponent);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__.addFilter)("editor.BlockEdit", "cc/border-control/block-wrapper", borderComponent);
 
 /***/ }),
 
@@ -118,12 +159,28 @@ function addBorderAttributes(settings, name) {
     type: "string",
     default: ""
   };
+  settings.attributes.bcPadding = {
+    type: "number",
+    default: 10
+  };
+  settings.attributes.bcBorderWidth = {
+    type: "number",
+    default: 2
+  };
+  settings.attributes.bcBorderRadius = {
+    type: "number",
+    default: 0
+  };
+  settings.attributes.bcBorderColor = {
+    type: "string",
+    default: "#000000"
+  };
 
   // (modify any additional settings)
 
   return settings;
 }
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("blocks.registerBlockType", "your-plugin-name/border-control/add-border-attributes", addBorderAttributes);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("blocks.registerBlockType", "cc/border-control/add-border-attributes", addBorderAttributes);
 
 /***/ }),
 

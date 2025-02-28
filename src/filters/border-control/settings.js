@@ -10,6 +10,26 @@ function addBorderAttributes(settings, name) {
     default: "",
   };
 
+  settings.attributes.bcPadding = {
+	type: "number",
+	default: 10,
+  };
+
+	settings.attributes.bcBorderWidth = {
+		type: "number",
+		default: 2,
+	};
+
+	settings.attributes.bcBorderRadius = {
+		type: "number",
+		default: 0,
+	};
+
+	settings.attributes.bcBorderColor = {
+		type: "string",
+		default: "#000000",
+	};
+
   // (modify any additional settings)
 
   return settings;
@@ -17,6 +37,6 @@ function addBorderAttributes(settings, name) {
 
 addFilter(
   "blocks.registerBlockType",
-  "your-plugin-name/border-control/add-border-attributes",
+  "cc/border-control/add-border-attributes",
   addBorderAttributes,
 );
