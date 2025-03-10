@@ -28,6 +28,9 @@ function cc_high_pulp_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/high-pulp-blocks' );
 	register_block_type( __DIR__ . '/build/blocks/testimonial' );
 	register_block_type( __DIR__ . '/build/filters/border-control' );
+	register_block_type( __DIR__ . '/build/blocks/staff-list' );
+	register_block_type( __DIR__ . '/build/blocks/staff-directory' );
+	register_block_type( __DIR__ . '/build/blocks/dynamic-block-hw');
 }
 add_action( 'init', 'cc_high_pulp_blocks_block_init' );
 

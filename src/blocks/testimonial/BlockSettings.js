@@ -2,7 +2,7 @@ import React from "react";
 import {InspectorControls} from "@wordpress/block-editor";
 import {ColorPalette, PanelBody, PanelRow} from "@wordpress/components";
 import colors from "../../commons/colors";
-import { ColorPicker } from '@wordpress/components';
+import {ColorPicker} from "@wordpress/components";
 
 export default function BlockSettings({attributes, setAttributes}) {
 

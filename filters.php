@@ -28,3 +28,16 @@ if($attrs['bcBorderStyle'] !== 'none') {
 }
 
 add_filter( 'render_block', 'cc_add_borders', 10, 2 );
+add_filter( 'block_type_metadata', function( $metadata ) {
+	$additionalmetadata = [
+		'attributes' => [
+		'bcBorderStyle' => ['type' => 'string'],
+		'bcPadding' => ['type' => 'number'],
+		'bcBorderWidth' => ['type' => 'number'],
+		'bcBorderRadius' => ['type' => 'number'],
+		'bcBorderColor' => ['type' => 'string'],
+			]
+	];
+
+	return array_merge_recursive( $metadata, $additionalmetadata );
+});

@@ -5,7 +5,10 @@
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
-	"files": ["build", "*.php"],
+	"files": [
+		"build",
+		"*.php"
+	],
 	"scripts": {
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
@@ -22,5 +25,8 @@
 		"@wordpress/components": "^29.4.0",
 		"@wordpress/env": "^10.18.0",
 		"@wordpress/scripts": "^30.11.0"
+	},
+	"dependencies": {
+		"@wordpress/server-side-render": "^5.19.0"
 	}
 }
