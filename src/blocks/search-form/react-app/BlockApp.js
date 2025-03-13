@@ -26,7 +26,13 @@ export default function BlockApp(props) {
 
 		setKeyword(keyword);
 		setFilteredProjects(results);
+	}
 
+	function sortProjects() {
+		const sortedProjects = [...filteredProjects].sort((a, b) => {
+			return a.title.rendered.localeCompare(b.title.rendered);
+		});
+		setFilteredProjects(sortedProjects);
 	}
 
 	return (
@@ -43,6 +49,7 @@ export default function BlockApp(props) {
 					value={keyword}
 					onChange={keyword => filterProjects(keyword)}
 				/>
+				<button onClick={sortProjects}>Sort</button>
 			</div>
 			<SearchList posts={filteredProjects}/>
 		</div>

@@ -76,6 +76,12 @@ function BlockApp(props) {
     setKeyword(keyword);
     setFilteredProjects(results);
   }
+  function sortProjects() {
+    const sortedProjects = [...filteredProjects].sort((a, b) => {
+      return a.title.rendered.localeCompare(b.title.rendered);
+    });
+    setFilteredProjects(sortedProjects);
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
@@ -88,6 +94,9 @@ function BlockApp(props) {
         label: "Filter",
         value: keyword,
         onChange: keyword => filterProjects(keyword)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        onClick: sortProjects,
+        children: "Sort"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SearchList__WEBPACK_IMPORTED_MODULE_1__["default"], {
       posts: filteredProjects
