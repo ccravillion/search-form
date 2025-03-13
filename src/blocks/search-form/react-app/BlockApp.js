@@ -29,10 +29,21 @@ export default function BlockApp(props) {
 	}
 
 	function sortProjects() {
+		const option = sortOptions[sortOptionIndex];
 		const sortedProjects = [...filteredProjects].sort((a, b) => {
-			return a.title.rendered.localeCompare(b.title.rendered);
+			if (option === 'title') {
+				return a.title.rendered.localeCompare(b.title.rendered);
+			} else if (option === 'date') {
+				return new Date(a.date) - new Date(b.date);
+			} else if (option === 'author') {
+				return a.author_name.localeCompare(b.author_name);
+			}
+			return 0;
 		});
 		setFilteredProjects(sortedProjects);
+
+		// Update the sort option index to the next one
+		setSortOptionIndex((sortOptionIndex + 1) % sortOptions.length);
 	}
 
 	return (
