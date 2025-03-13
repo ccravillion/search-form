@@ -158,8 +158,10 @@ function searchListItem({
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "card-body",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        src: post.image,
+        src: post._embedded['wp:featuredmedia']['0'].source_url,
         alt: post.title,
+        width: "200px",
+        height: "170px",
         className: "card-img"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
         children: post.project_description

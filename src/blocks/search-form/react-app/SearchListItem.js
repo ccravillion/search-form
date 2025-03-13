@@ -9,7 +9,7 @@ console.log(post);
 			</div>
 
 			<div className="card-body">
-				<img src={post.image} alt={post.title} className="card-img" />
+				<img src={post._embedded['wp:featuredmedia']['0'].source_url} alt={post.title} width="200px" height="170px" className="card-img" />
 				<p>{post.project_description}</p>
 			</div>
 
