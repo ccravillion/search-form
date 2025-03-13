@@ -16,9 +16,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			Searching...
-		</p>
-	);
+	const LoadingAnimation = () => {
+		return (
+			<video {...useBlockProps.save()}>
+				<source src="C:\Users\carte\Documents\IWD\high-pulp-blocks\loading.webm"/>
+			</video>
+		);
+	}
+	export default LoadingAnimation
 }

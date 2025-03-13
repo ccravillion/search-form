@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/blocks/search-form/block.json":
@@ -8,6 +7,7 @@
   \*******************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cc/search-form","version":"0.1.0","title":"Search Form","category":"design","icon":"search","description":"Homework Search Form for CPT","example":{},"supports":{"html":false},"textdomain":"search-form","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
@@ -18,6 +18,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
@@ -76,6 +77,7 @@ function Edit() {
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -88,6 +90,7 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -140,40 +143,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************!*\
   !*** ./src/blocks/search-form/save.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ save)
-/* harmony export */ });
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-
-
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
-
-function save() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
-    children: "Searching..."
-  });
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\src\\blocks\\search-form\\save.js: 'import' and 'export' may only appear at the top level. (26:1)\n\n\u001b[0m \u001b[90m 24 |\u001b[39m \t\t)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m \t}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m \t\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[33mLoadingAnimation\u001b[39m\n \u001b[90m    |\u001b[39m \t\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m }\n \u001b[90m 28 |\u001b[39m\u001b[0m\n    at constructor (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:360:19)\n    at JSXParserMixin.raise (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:3327:19)\n    at JSXParserMixin.parseStatementContent (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12509:18)\n    at JSXParserMixin.parseStatementLike (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12406:17)\n    at JSXParserMixin.parseStatementListItem (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12386:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12960:61)\n    at JSXParserMixin.parseBlockBody (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12953:10)\n    at JSXParserMixin.parseBlock (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12941:10)\n    at JSXParserMixin.parseFunctionBody (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:11783:24)\n    at JSXParserMixin.parseFunctionBodyAndFinish (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:11769:10)\n    at C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13085:12\n    at JSXParserMixin.withSmartMixTopicForbiddingContext (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12077:14)\n    at JSXParserMixin.parseFunction (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13084:10)\n    at JSXParserMixin.parseExportDefaultExpression (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13539:19)\n    at JSXParserMixin.parseExport (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13465:25)\n    at JSXParserMixin.parseStatementContent (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12519:27)\n    at JSXParserMixin.parseStatementLike (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12406:17)\n    at JSXParserMixin.parseModuleItem (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12383:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12960:36)\n    at JSXParserMixin.parseBlockBody (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12953:10)\n    at JSXParserMixin.parseProgram (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12280:10)\n    at JSXParserMixin.parseTopLevel (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12270:25)\n    at JSXParserMixin.parse (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:14120:10)\n    at parse (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\parser\\lib\\index.js:14154:38)\n    at parser (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\core\\lib\\parser\\index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:64:37)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\core\\lib\\transformation\\index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\@babel\\core\\lib\\transform.js:22:33)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\carte\\Documents\\IWD\\high-pulp-blocks\\node_modules\\gensync\\index.js:223:11)");
 
 /***/ }),
 
@@ -183,6 +155,7 @@ function save() {
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -195,6 +168,7 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -205,6 +179,7 @@ module.exports = window["wp"]["blockEditor"];
   \********************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["blocks"];
 
 /***/ }),
@@ -215,6 +190,7 @@ module.exports = window["wp"]["blocks"];
   \******************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["i18n"];
 
 /***/ }),
@@ -225,6 +201,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["ReactJSXRuntime"];
 
 /***/ })
