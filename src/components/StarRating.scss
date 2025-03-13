@@ -16,5 +16,8 @@
 
 	}
 
+	&.readonly .star:hover {
+		cursor: default;
+	}
 
 }

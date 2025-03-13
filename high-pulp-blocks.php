@@ -31,7 +31,24 @@ function cc_high_pulp_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/staff-list' );
 	register_block_type( __DIR__ . '/build/blocks/staff-directory' );
 	register_block_type( __DIR__ . '/build/blocks/dynamic-block-hw');
+	register_block_type( __DIR__ . '/build/blocks/submit-review');
+	register_block_type( __DIR__ . '/build/blocks/search-form');
+	//add api client for submit-review block
+	wp_enqueue_script( 'wp-api' );
 }
 add_action( 'init', 'cc_high_pulp_blocks_block_init' );
 
+
+
 include __DIR__ . '/filters.php';
+
+// mod review content
+add_filter('the_content', function ($content) {
+	if (get_post_type() === 'review') {
+		$content .= '<div>Rating '
+			. get_post_meta(get_the_ID(), 'rating', true) .
+			'</div>';
+	}
+		return $content;
+
+});
