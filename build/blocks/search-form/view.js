@@ -77,21 +77,10 @@ function BlockApp(props) {
     setFilteredProjects(results);
   }
   function sortProjects() {
-    const option = sortOptions[sortOptionIndex];
     const sortedProjects = [...filteredProjects].sort((a, b) => {
-      if (option === 'title') {
-        return a.title.rendered.localeCompare(b.title.rendered);
-      } else if (option === 'date') {
-        return new Date(a.date) - new Date(b.date);
-      } else if (option === 'author') {
-        return a.author_name.localeCompare(b.author_name);
-      }
-      return 0;
+      return a.title.rendered.localeCompare(b.title.rendered);
     });
     setFilteredProjects(sortedProjects);
-
-    // Update the sort option index to the next one
-    setSortOptionIndex((sortOptionIndex + 1) % sortOptions.length);
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
